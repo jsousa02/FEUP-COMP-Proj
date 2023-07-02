@@ -1,0 +1,50 @@
+SetInline {
+
+    .field public a.i32;
+
+    .method lmao(bruh.i32).SetInline {
+
+        t1.SetInline :=.SetInline this.SetInline;
+
+        ret.SetInline t1.SetInline;
+
+    }
+
+    .method set(newA.i32).SetInline {
+
+        a.i32 :=.i32 $1.newA.i32;
+
+        t2.SetInline :=.SetInline this.SetInline;
+        t3.SetInline :=.SetInline invokevirtual(t2.SetInline, "lmao", a.i32).SetInline;
+
+        t4.SetInline :=.SetInline this.SetInline;
+
+        ret.SetInline t4.SetInline;
+
+    }
+
+    .method public static main(args.array.String).V {
+
+        t5.SetInline :=.SetInline new(SetInline).SetInline;
+        invokespecial(t5.SetInline, "<init>").V;
+        si.SetInline :=.SetInline t5.SetInline;
+
+        t6.i32 :=.i32 1.i32;
+        t7.SetInline :=.SetInline invokevirtual(si.SetInline, "set", t6.i32).SetInline;
+        t8.i32 :=.i32 2.i32;
+        t9.SetInline :=.SetInline invokevirtual(t7.SetInline, "set", t8.i32).SetInline;
+        t10.i32 :=.i32 3.i32;
+        t11.SetInline :=.SetInline invokevirtual(t9.SetInline, "set", t10.i32).SetInline;
+        t12.i32 :=.i32 4.i32;
+        t13.SetInline :=.SetInline invokevirtual(t11.SetInline, "set", t12.i32).SetInline;
+        t14.i32 :=.i32 5.i32;
+        t15.SetInline :=.SetInline invokevirtual(t13.SetInline, "set", t14.i32).SetInline;
+
+        ret.V;
+
+    }
+
+    .construct SetInline().V {
+        invokespecial(this, "<init>").V;
+    }
+}
